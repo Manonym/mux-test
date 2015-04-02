@@ -21,7 +21,7 @@ func start() {
 
 	port := 8000
 	router := mux.NewRouter()
-	s1 := router.Host("www.domain.de").Path("/hallo").Subrouter()
+	s1 := router.Host("localhost").Path("/hallo").Subrouter()
 	s1.Methods("GET").HandlerFunc(handler)
 	// s1.Methods("POST").HandlerFunc(postHandler)
 	http.ListenAndServe(":"+strconv.Itoa(port), router)
